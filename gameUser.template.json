@@ -1,0 +1,407 @@
+{
+    "MaxTributeDinos": {
+        "Value Type": "integer",
+        "Default": 20,
+        "Effect": "Slots for uploaded creatures  Note: Some player claimed maximum 273 to be safe cap and more will corrupt profile/cluster and lead to loose of all storaged creatures but it need to be checked"
+    },
+    "MaxTributeItems": {
+        "Value Type": "integer",
+        "Default": 50,
+        "Effect": "Slots for uploaded items and resources  Note: Some player claimed maximum 154 to be safe cap and more will corrupt profile/cluster and lead to loose of all storaged items and resources but it need to be checked"
+    },
+    "alwaysNotifyPlayerJoined": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Players will always get notified if someone joins the server"
+    },
+    "alwaysNotifyPlayerLeft": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Players will always get notified if someone leaves the server"
+    },
+    "allowThirdPersonPlayer": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Enables 3rd Person view"
+    },
+    "globalVoiceChat": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Voice chat turns global"
+    },
+    "ShowMapPlayerLocation": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Show each player their own precise position when they view their map"
+    },
+    "noTributeDownloads": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Disables downloading characters from other servers"
+    },
+    "proximityChat": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Only players near each other can see their chat messages"
+    },
+    "serverPVE": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Disables PvP, enables PvE"
+    },
+    "serverHardcore": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Enables hardcore mode (player characters revert to level 1 upon death)"
+    },
+    "serverForceNoHud": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "HUD always disabled"
+    },
+    "DisableStructureDecayPvE": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Disable the gradual (7 days) decay of player structures Introduced in patch 173.0"
+    },
+    "DisableDinoDecayPvE": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Disable the gradual (7 days) decay of dinosaur ownership. Without this set to true, every dinosaur can be claimed by any player. Introduced in patch 206.0"
+    },
+    "AllowFlyerCarryPvE": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Permit flying dinosaurs to pick up other dinosaurs and players when mounted by a player in PvE Introduced in patch 173.0 but changed from bAllowFlyerCarryPVE to AllowFlyerCarryPVE"
+    },
+    "TheMaxStructuresInRange": {
+        "Value Type": "integer",
+        "Default": 10500,
+        "Effect": "Specifies the maximum number of structures that can be constructed within a certain (currently hard-coded) range. Introduced in patch 252.1 replacing the old value NewMaxStructuresInRange"
+    },
+    "bAllowPlatformSaddleMultiFloors": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Set to true to allow multiple platform floors. Introduced in patch 260.0"
+    },
+    "DifficultyOffset": {
+        "Value Type": "float",
+        "Default": 0.2,
+        "Effect": "Specifies the difficulty level."
+    },
+    "ServerPassword": {
+        "Value Type": "string",
+        "Default": null,
+        "Effect": "If specified, players must provide this password to join the server."
+    },
+    "ServerAdminPassword": {
+        "Value Type": "string",
+        "Default": null,
+        "Effect": "If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server."
+    },
+    "SpectatorPassword": {
+        "Value Type": "string",
+        "Default": null,
+        "Effect": "To use non-admin spectator, the server must specify a spectator password. Then any client can use these console commands: requestspectator <password> and stopspectating. See patch 191.0 for more information and hotkeys."
+    },
+    "DayCycleSpeedScale": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the passage of time in the ARK, controlling how often day changes to night and night changes to day. The default value 1 provides the same cycle speed as the singleplayer experience (and the official public servers). Values lower than 1 slow down the cycle; higher values accelerate it. Base time when value is 1 appears to be 1 minute real time equals approx. 28 minutes game time. Thus, for an approximate 24 hour day/night cycle in game, use .035 for the value."
+    },
+    "NightTimeSpeedScale": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the passage of time in the ARK during night time. This value determines the length of each night, relative to the length of each day (as specified by DayTimeSpeedScale. Lowering this value increases the length of each night."
+    },
+    "DayTimeSpeedScale": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the passage of time in the ARK during the day. This value determines the length of each day, relative to the length of each night (as specified by NightTimeSpeedScale. Lowering this value increases the length of each day."
+    },
+    "DinoDamageMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the damage dinosaurs deal with their attacks. The default value 1 provides normal damage. Higher values increase damage. Lower values decrease it."
+    },
+    "PlayerDamageMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the damage players deal with their attacks. The default value 1 provides normal damage. Higher values increase damage. Lower values decrease it."
+    },
+    "StructureDamageMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the damage structures deal with their attacks (i.e. spiked walls). The default value 1 provides normal damage. Higher values increase damage. Lower values decrease it."
+    },
+    "PlayerResistanceMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the resistance to damage players receive when attacked. The default value 1 provides normal damage. Higher values decrease resistance, increasing damage per attack. Lower values increase it, reducing damage per attack. A value of 0.5 results in a player taking half damage while a value of 2.0 would result in taking double normal damage."
+    },
+    "DinoResistanceMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the resistance to damage dinosaurs receive when attacked. The default value 1 provides normal damage. Higher values decrease resistance, increasing damage per attack. Lower values increase it, reducing damage per attack. A value of 0.5 results in a dino taking half damage while a value of 2.0 would result in a dino taking double normal damage."
+    },
+    "StructureResistanceMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the resistance to damage structures receive when attacked. The default value 1 provides normal damage. Higher values decrease resistance, increasing damage per attack. Lower values increase it, reducing damage per attack. A value of 0.5 results in a structure taking half damage while a value of 2.0 would result in a structure taking double normal damage."
+    },
+    "XPMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the experience received by players, tribes and dinosaurs for various actions. The default value 1 provides the same amounts of experience as in the singleplayer experience (and official public servers). Higher values increase XP amounts awarded for various actions; lower values decrease it. In 313.5 an additional hardcoded multiplier of 4 was activated."
+    },
+    "PvEStructureDecayPeriodMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the decay rate of player structures in PvE mode. The specific effect(s) of this option and its range of valid values are unknown as of this writing.[1]"
+    },
+    "PvEStructureDecayDestructionPeriod": {
+        "Value Type": "integer",
+        "Default": 0,
+        "Effect": "Specifies the time required for player structures to decay in PvE mode. The specific effect(s) of this option and its range of valid values are unknown as of this writing.[1]"
+    },
+    "PvEDinoDecayPeriodMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "... Introduced in patch 206.0"
+    },
+    "TamingSpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for dinosaur taming speed. Higher values make taming faster."
+    },
+    "HarvestAmountMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for yields from all harvesting activities (chopping down trees, picking berries, carving carcasses, mining rocks, etc.). Higher values increase the amount of materials harvested with each strike."
+    },
+    "HarvestHealthMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the \"health\" of items that can be harvested (trees, rocks, carcasses, etc.). Higher values increase the amount of damage (i.e. \"number of strikes\") such objects can withstand before being destroyed, which results in higher overall harvest yields."
+    },
+    "MaxPlatformSaddleStructureLimit": {
+        "Value Type": "integer",
+        "Default": 1200,
+        "Effect": "Changes the maximum number of platformed-creatures/rafts allowed on the ARK (a potential performance cost) Example: MaxPlatformSaddleStructureLimit=10 would only allow 10 platform saddles / rafts across the entire ark Introduced in patch 212.1"
+    },
+    "PerPlatformMaxStructuresMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (on a percentage scale) max number of items place-able on saddles and rafts Example: PerPlatformMaxStructuresMultiplier=1.5 Introduced in patch 211.0"
+    },
+    "MaxGateFrameOnSaddles": {
+        "Value Type": "integer",
+        "Default": 0,
+        "Effect": "Defines the maximum amount of gateways allowed on platform saddles. Example: MaxGateFrameOnSaddles=2 Would prevent players from placing more than 2 gateways on their platform saddles. This setting is not retroactive, meaning existing builds won't be affected. Set to 0 to not impose any limits. Official PVP servers have it set to 2. Introduced in patch 312.65"
+    },
+    "ResourcesRespawnPeriodMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for the respawn rate for resource nodes (trees, rocks, bushes, etc.). Lower values cause nodes to respawn more frequently."
+    },
+    "PlayerCharacterWaterDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for player characters' water consumption. Higher values increase water consumption (player characters get thirsty faster)."
+    },
+    "PlayerCharacterFoodDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for player characters' food consumption. Higher values increase food consumption (player characters get hungry faster)."
+    },
+    "PlayerCharacterStaminaDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for player characters' stamina consumption. Higher values increase stamina consumption (player characters get tired faster)."
+    },
+    "PlayerCharacterHealthRecoveryMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for player characters' health recovery. Higher values increase the recovery rate (player characters heal faster)."
+    },
+    "DinoCharacterFoodDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for dinosaurs' food consumption. Higher values increase food consumption (dinosaurs get hungry faster). It also affects the taming-times."
+    },
+    "DinoCharacterStaminaDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for dinosaurs' stamina consumption. Higher values increase stamina consumption (dinosaurs get tired faster)."
+    },
+    "DinoCharacterHealthRecoveryMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for dinosaurs' health recovery. Higher values increase the recovery rate (dinosaurs heal faster)."
+    },
+    "DinoCountMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Specifies the scaling factor for dinosaur spawns. Higher values increase the number of dinosaurs spawned throughout the ARK."
+    },
+    "AllowCaveBuildingPvE": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "If set to True, allows building in caves when PvE mode is also enabled. Introduced in patch 194.0"
+    },
+    "AllowCaveBuildingPvP": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "If set to True, allows building in caves when PvP mode is also enabled. Introduced in patch 326.13"
+    },
+    "BanListURL": {
+        "Value Type": "string",
+        "Default": "\"http://arkdedicated.com/banlist.txt\"",
+        "Effect": "Use the official global ban list, or point to any online ban list that you want. Must be enclosed in double quotes. Before 279.233 the URL was http://playark.com/banlist.txt  Introduced in patch 201.0"
+    },
+    "PvPStructureDecay": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Turns off structure decay on PvP servers."
+    },
+    "TributeItemExpirationSeconds": {
+        "Value Type": "integer",
+        "Default": 86400,
+        "Effect": "Set the expiration timer for uploaded items."
+    },
+    "TributeDinoExpirationSeconds": {
+        "Value Type": "integer",
+        "Default": 86400,
+        "Effect": "Set the expiration timer for uploaded dinos."
+    },
+    "TributeCharacterExpirationSeconds": {
+        "Value Type": "integer",
+        "Default": 86400,
+        "Effect": "Set the expiration timer for uploaded survivors."
+    },
+    "AutoSavePeriodMinutes": {
+        "Value Type": "float",
+        "Default": 15.0,
+        "Effect": "Set interval for automatic saves. Setting this to 0 will cause constant saving, You can however set it to 9000000 to effectively disable it."
+    },
+    "CrossARKAllowForeignDinoDownloads": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "if set to true, you will be able to tribute download non-native creatures on the Aberration map Introduced in patch 275.0"
+    },
+    "DisablePvEGamma": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Prevents use of console command \"gamma\" in PvE mode Introduced in patch 207.0"
+    },
+    "EnablePvPGamma": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Allow use of console command \"gamma\" in PvP mode Introduced in patch 174.3"
+    },
+    "TribeNameChangeCooldown": {
+        "Value Type": "integer",
+        "Default": 15,
+        "Effect": "Cooldown, in minutes, in between tribe name changes Introduced in patch 278.0"
+    },
+    "AllowHideDamageSourceFromLogs": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Allows the hiding of damage sources in tribe logs. Introduced in patch 278.0"
+    },
+    "RandomSupplyCratePoints": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "If true, supply drops are in random locations. NOTE: This setting is known to cause artifacts becoming inaccesable on [Ragnarok] if active Introduced in patch 278.0"
+    },
+    "DisableWeatherFog": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "If true, disables fog. Introduced in patch 278.0"
+    },
+    "ActiveMods": {
+        "Value Type": "integer",
+        "Default": null,
+        "Effect": "Specifies the order and which mods are loaded, ModIDs need to be comma seperated and in one line  Introduced in patch 190.0"
+    },
+    "AdminLogging": {
+        "Value Type": "boolean",
+        "Default": true,
+        "Effect": "logs all admin commands to ingame chat Introduced in patch 206.0"
+    },
+    "ClampResourceHarvestDamage": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Limit the damage caused by a dino to a resource for harvesting. Introduced in patch 182.0"
+    },
+    "ItemStackSizeMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "allow increasing or decreasing global item stack size, this means all default stacksizes will be multiplied by the value given  Introduced in patch 291.100"
+    },
+    "PlatformSaddleBuildAreaBoundsMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "increasing the number allows structures being placed further away from the platform"
+    },
+    "bForceCanRideFliers": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "allows flyers to be used on maps where they normally are disabled NOTE: if you set it to false it will disable flyers on any map"
+    },
+    "AllowTekSuitPowersInGenesis": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "enable or disable TEK suit powers in Genesis Part 1"
+    },
+    "EnableCryoSicknessPVE": {
+        "Value Type": "boolean",
+        "Default": true,
+        "Effect": "Enable/Disable Cryopod cooldown timer when deploying a creature.  If false, deployed creatures do not experience cryosickness. Introduced in patch 307.56"
+    },
+    "EnableCryopodNerf": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Enable/Disable Cryosickness when deploying a creature. The following settings need to be set also: CryopodNerfDamageMult & CryopodNerfDuration.   If true, there is no Cryopod cooldown timer, and creatures do not become unconscious. Introduced in patch 309.53"
+    },
+    "CryopodNerfDuration": {
+        "Value Type": "integer",
+        "Default": 10,
+        "Effect": "Amount of time, in seconds, Cryosickness lasts after deploying a creature from a Cryopod. If EnableCryoSicknessPVE is enabled, it will override this line. Introduced in patch 309.53"
+    },
+    "CryopodNerfDamageMult": {
+        "Value Type": "float",
+        "Default": 0.01,
+        "Effect": "Reduces the amount of damage delt by the creature after it is deployed from the cryopod, as a percentage of total damage output, and for the length of time set by CryopodNerfDuration.  CryopodNerfDuration needs a valid value.   CryopodNerfDamageMult=0.01 means 99% of the damage is removed  Introduced in patch 309.53"
+    },
+    "CryopodNerfIncomingDamageMultPercent": {
+        "Value Type": "float",
+        "Default": 0.25,
+        "Effect": "Increases the amount of damage taken by the creature after it is deployed from the cryopod, as a percentage of total damage received, and for the length of time set by CryopodNerfDuration.  CryopodNerfIncomingDamageMultPercent=0.25 means a realeased tame takes 25% more damage while the debuff lasts  Introduced in patch 310.11"
+    },
+    "AllowSharedConnections": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "AllowSharedConnections=false means family sharing is disabled Introduced in patch 312.73"
+    },
+    "CustomDynamicConfigUrl": {
+        "Value Type": "string",
+        "Default": null,
+        "Effect": "direct link to config file e.g.: http://arkdedicated.com/dynamicconfig.ini ; currently only the following options are supported to be adjusted dynamically: TamingSpeedMultiplier, HarvestAmountMultiplier, XPMultiplier, MatingIntervalMultiplier, BabyMatureSpeedMultiplier, EggHatchSpeedMultiplier, BabyFoodConsumptionSpeedMultiplier, CropGrowthSpeedMultiplier, MatingSpeedMultiplier, BabyCuddleIntervalMultiplier, BabyImprintAmountMultiplier, CustomRecipeEffectivenessMultiplier, TributeItemExpirationSeconds, TributeDinoExpirationSeconds, EnableFullDump, GUseServerNetSpeedCheck, bUseAlarmNotifications, HexagonRewardMultiplier and NPCReplacements.  Introduced in patch 307.2"
+    },
+    "MaxTamedDinos": {
+        "Value Type": "integer",
+        "Default": 4000,
+        "Effect": "Sets the maximum number of tamed Dinos on a Server, this is a global cap. Introduced in patch 191.0"
+    },
+    "NewMaxStructuresInRange": {
+        "Value Type": "integer",
+        "Default": 6000,
+        "Effect": "Specifies the maximum number of structures that can be constructed within a certain (currently hard-coded) range. Introduced in patch 188.0 and deprecated with patch 252.1 by TheMaxStructuresInRange"
+    },
+    "MaxStructuresInRange": {
+        "Value Type": "integer",
+        "Default": 1300,
+        "Effect": "Specifies the maximum number of structures that can be constructed within a certain (currently hard-coded) range. Introduced in patch 173.0 and deprecated with patch 188.0 by NewMaxStructuresInRange"
+    }
+}

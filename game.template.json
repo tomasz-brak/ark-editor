@@ -1,0 +1,382 @@
+{
+    "bAllowUnlimitedRespecs": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Set to true to allow more than one usage of Mindwipe Tonic without 24 hours cooldown."
+    },
+    "bOnlyAllowSpecifiedEngrams": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "If true, any Engram not explicitly specified in the OverrideEngramEntries or OverrideNamedEngramEntries list will be hidden. All Items and Blueprints based on hidden Engrams will be removed. Introduced in patch 187.0"
+    },
+    "GlobalSpoilingTimeMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Scales the spoiling time of perishables globally. Higher values prolong the time. (Note: As of patch 196.0 there is still a bug whereby items moved to the player's inventory have their spoilage times reset to normal (value 1.0) despite what this value is set at. It seems that as of 248.5 this has been fixed.) Introduced in patch 189.0"
+    },
+    "GlobalItemDecompositionTimeMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Scales the decomposition time of dropped items, loot bags etc. globally. Higher values prolong the time. Introduced in patch 189.0"
+    },
+    "GlobalCorpseDecompositionTimeMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Scales the decomposition time of corpses, (player and dinosaur) Higher values prolong the time. Introduced in patch 189.0"
+    },
+    "OverrideMaxExperiencePointsPlayer": {
+        "Value Type": "integer",
+        "Default": null,
+        "Effect": "Overrides the Max XP cap of players Introduced in patch 189.0"
+    },
+    "OverrideMaxExperiencePointsDino": {
+        "Value Type": "integer",
+        "Default": null,
+        "Effect": "Overrides the Max XP cap of dinosaur Introduced in patch 189.0"
+    },
+    "ResourceNoReplenishRadiusPlayers": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Allow resources to regrow closer or farther away from players & structures.Values higher than 1 increase the distance around players and structures where resources are not allowed to grow back. Values between 0 and 1 will reduce it. Introduced in patch 196.0 "
+    },
+    "bPvEDisableFriendlyFire": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Prevent-Friendly-Fire (among tribesmates/tribesdinos/tribesstructures) option for PvE servers Introduced in patch 202.0"
+    },
+    "bDisableFriendlyFire": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Prevent-Friendly-Fire (among tribesmates/tribesdinos/tribesstructures) option for PvP servers Introduced in patch 228.4"
+    },
+    "bFlyerPlatformAllowUnalignedDinoBasing": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Quetz platforms will not allow any non-allied dino to base on them when they are flying. If you want your server to allow non-allied dinos to be able to stand on the Quetz platforms set this to true. Introduced in patch 218.3"
+    },
+    "bUseCorpseLocator": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "If set to true, you will see a green light beam at the location of your death"
+    },
+    "MatingIntervalMultiplier": {
+        "Value Type": "float",
+        "Default": "",
+        "Effect": "Higher number increases (on a percentage scale) interval between which dinosaurs can mate Example: MatingIntervalMultiplier=0.5 would allow dinosaurs to mate 50% sooner Introduced in patch 219.0 "
+    },
+    "MatingSpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (by percentage) speed at which dinosaurs mate with each other Example: MatingSpeedMultiplier=2.0 would cause dinosaurs to complete mating in half the normal time Introduced in patch ??? (this var is undocumented in patch notes)"
+    },
+    "EggHatchSpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number decreases (by percentage) time needed for fertilized egg to hatch Introduced in patch 219.0"
+    },
+    "BabyMatureSpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number decreases (by percentage) time needed for baby dino to mature Introduced in patch 219.0 "
+    },
+    "BabyFoodConsumptionSpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Lower number decreases (by percentage) the speed that baby dinos eat their food Introduced in patch 222.3 "
+    },
+    "CropGrowthSpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (by percentage) speed of crop growth Introduced in patch 218.0"
+    },
+    "LayEggIntervalMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (by percentage) time between eggs spawning / being laid Introduced in patch 218.0"
+    },
+    "PoopIntervalMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number decreases (by percentage) how frequently you can poop Introduced in patch 218.0"
+    },
+    "CropDecaySpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number decrease (by percentage) speed of crop decay in plots Introduced in patch 218.0"
+    },
+    "HairGrowthSpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increase speed of hair growth. Introduced in patch 254.0 "
+    },
+    "StructureDamageRepairCooldown": {
+        "Value Type": "integer",
+        "Default": 180,
+        "Effect": ""
+    },
+    "bPvEAllowTribeWar": {
+        "Value Type": "boolean",
+        "Default": true,
+        "Effect": "False disables capability for Tribes to officially declare war on each other for mutually-agreed-upon period of time Introduced in patch 223.0"
+    },
+    "bPvEAllowTribeWarCancel": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "True allows cancellation of an agreed-upon war before it has actually started Introduced in patch 223.0 "
+    },
+    "bPassiveDefensesDamageRiderlessDinos": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "True allow spike walls to damage wild/riderless Dinos Introduced in patch 224.0 "
+    },
+    "CustomRecipeEffectivenessMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (by percentage) the effectiveness of a custom recipe Introduced in patch 226.0"
+    },
+    "CustomRecipeSkillMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (by percentage) the effect of the players crafting speed level that is used as a base for the formula in creating a custom recipe Introduced in patch 226.0 "
+    },
+    "DinoHarvestingDamageMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (by percentage) the damage done to a harvestable item/entity by a Dino. The higher number, the faster you collect Introduced in patch 231.1 "
+    },
+    "PlayerHarvestingDamageMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (by percentage) the damage done to a harvestable item/entity by a Player. The higher number, the faster you collect Introduced in patch 231.1 "
+    },
+    "DinoTurretDamageMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Higher number increases (by percentage) the damage done by Turrets towards a Dino Introduced in patch 231.4 "
+    },
+    "bDisableLootCrates": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "True prevent spawning of Loot crates (artifact creates will still spawn) Introduced in patch 231.7 "
+    },
+    "SupplyCrateLootQualityMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Increases the quality of items that have a quality in the supply crates. The quality also depends on the Difficulty Offset. Introduced in patch 260.0"
+    },
+    "FishingLootQualityMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Increases the quality of items that have a quality when fishing. Introduced in patch 260.0 "
+    },
+    "KickIdlePlayersPeriod": {
+        "Value Type": "float",
+        "Default": 0,
+        "Effect": "Set this to a number > 0 to act as a timer. Locks a tribe slot for the value in seconds, so a value of 3600 would mean that if someone leaves the tribe, their place cannot be taken by another player (or rejoin) for 1 hour. Used on Official Small Tribes Servers. Introduced in patch 280.114 "
+    },
+    "MaxNumberOfPlayersInTribe": {
+        "Value Type": "integer",
+        "Default": 0,
+        "Effect": "Set this to a number > 0 to act as a limit. 1 Player Tribes effectively disables Tribes Introduced in patch 242.0 "
+    },
+    "BabyImprintingStatScaleMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "How much of an effect on stats the Imprinting Quality has. Set it to 0 to effectively disable the system. Introduced in patch 242.0 "
+    },
+    "BabyImprintAmountMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Multiplier applied to the percentage each imprints provide. For example, if an imprint usually give 10%, setting this multiplier to 0.5 means they would now give 5% each. While setting it to 2.0 means they would now give 20% each, etc. This multiplier is global, meaning it will affect the imprinting progression of every species. Introduced in patch 312.35"
+    },
+    "BabyCuddleIntervalMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "How often Babies wanna cuddle. More often means you'll need to cuddle with them more frequently to gain Imprinting Quality. Introduced in patch 242.0"
+    },
+    "BabyCuddleGracePeriodMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier on how long after delaying cuddling with the Baby before Imprinting Quality starts to decrease. Introduced in patch 242.0 "
+    },
+    "BabyCuddleLoseImprintQualitySpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier on how fast Imprinting Qualitiy decreases after the grace period if you haven't yet cuddled with the Baby. Introduced in patch 242.0 "
+    },
+    "MaxTribeLogs": {
+        "Value Type": "integer",
+        "Default": 100,
+        "Effect": "How many Tribe logs are displayed for each tribe. Introduced in patch 224.0 "
+    },
+    "PvPZoneStructureDamageMultiplier": {
+        "Value Type": "float",
+        "Default": 6.0,
+        "Effect": "Specifies the scaling factor for damage structures take within caves. The lower the value, the less damage the structure takes (i.e. setting to 1.0 will make structure built in or near a cave receive the same amount of damage as those built on the surface). Introduced in patch 187.0"
+    },
+    "bDisableDinoRiding": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Players are not able to ride on dinos"
+    },
+    "bDisableDinoTaming": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Players are not able to tame dinos"
+    },
+    "bDisableStructurePlacementCollision": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "If 'true' allows for structures to clip into the terrain."
+    },
+    "bAllowCustomRecipes": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Introduced in patch 224.0"
+    },
+    "bAutoUnlockAllEngrams": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Unlocks all Engrams available. -Ignores OverrideEngramEntries and OverrideNamedEngramEntries entries. introduced in patch 273.62"
+    },
+    "bHardLimitTurretsInRange": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Introduced in patch 278.0"
+    },
+    "bShowCreativeMode": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Enables creative mode. Introduced in patch 278.0 "
+    },
+    "PreventOfflinePvPConnectionInvincibleInterval": {
+        "Value Type": "float",
+        "Default": 5.0,
+        "Effect": "Introduced in patch 278.0 "
+    },
+    "TamedDinoCharacterFoodDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier on how fast tame dinos consume food. Introduced in patch 278.0 "
+    },
+    "WildDinoCharacterFoodDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier on how fast wild dinos consume food. Introduced in patch 278.0 "
+    },
+    "WildDinoTorporDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier on how fast wild dinos lose torpor. Introduced in patch 278.0 "
+    },
+    "PassiveTameIntervalMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier on how often you get tame requests for passive tame dinos. Introduced in patch 278.0 "
+    },
+    "TamedDinoTorporDrainMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier on how fast tamed dinos lose torpor. Introduced in patch 278.0 "
+    },
+    "KillXPMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier to scale the amount of XP earned for a kill Introduced in patch 243.0"
+    },
+    "HarvestXPMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier to scale the amount of XP earned for harvesting Introduced in patch 243.0"
+    },
+    "CraftXPMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier to scale the amount of XP earned for crafting Introduced in patch 243.0"
+    },
+    "GenericXPMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier to scale the amount of XP earned for generic XP (automatic over time) Introduced in patch 243.0"
+    },
+    "SpecialXPMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier to scale the amount of XP earned for SpecialEvents Introduced in patch 243.0"
+    },
+    "FastDecayInterval": {
+        "Value Type": "integer",
+        "Default": null,
+        "Effect": "Enable this option for a fixed constant decay period for \"Fast Decay\" structures (such as pillars or lone foundations). Value is in seconds. "
+    },
+    "MaxAlliancesPerTribe": {
+        "Value Type": "integer",
+        "Default": null,
+        "Effect": "Define the maximum alliances a tribe can form or be part of. "
+    },
+    "MaxTribesPerAlliance": {
+        "Value Type": "integer",
+        "Default": null,
+        "Effect": "Define the maximum of tribes in an alliance. "
+    },
+    "bUseTameLimitForStructuresOnly": {
+        "Value Type": "boolean",
+        "Default": null,
+        "Effect": "if true will make Tame Units only be applied and used for Platforms with Structures and Rafts effectively disabling Tame Units for Dinos without Platform Structures "
+    },
+    "UseCorpseLifeSpanMultiplier": {
+        "Value Type": "float",
+        "Default": null,
+        "Effect": "modifies corpse AND dropped box lifespan Introduced in patch 275.0"
+    },
+    "FuelConsumptionIntervalMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Define the interval of fuel consumption. Introduced in patch 264.0 "
+    },
+    "GlobalPoweredBatteryDurabilityDecreasePerSecond ": {
+        "Value Type": "float",
+        "Default": 3,
+        "Effect": "Introduced in patch 275.0 "
+    },
+    "DestroyTamesOverLevelClamp": {
+        "Value Type": "integer",
+        "Default": 0,
+        "Effect": "Tames that exceed that level will be deleted on server start. Official servers have it set to 449. Introduced in patch 255.0"
+    },
+    "LimitNonPlayerDroppedItemsRange": {
+        "Value Type": "integer",
+        "Default": 0,
+        "Effect": "Limit the number of droppeditems in an area (together with LimitNonPlayerDroppedItemsCount). Official servers have it set to 1600 Introduced in patch 302.4 "
+    },
+    "LimitNonPlayerDroppedItemsCount": {
+        "Value Type": "integer",
+        "Default": 0,
+        "Effect": "Limit the number of droppeditems in an area(together with LimitNonPlayerDroppedItemsRange). Official servers have it set to 600 Introduced in patch 302.4"
+    },
+    "MaxFallSpeedMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "Defines the falling speed multiplier at which players starts taking fall damage. The falling speed is based on the time players spent in the air while having a negated Z axis velocity meaning that the higher this setting is, the longer players can fall without taking fall damage. For example, having it set to 0.1 means players will no longer survive a regular jump while having it set very high such as to 100.0 means players will survive a fall from the sky limit, etc. This setting doesn't affect the gravity scale of the players so there won't be any physics difference to the character movements. Introduced in patch 279.224 "
+    },
+    "bIgnoreStructuresPreventionVolumes": {
+        "Value Type": "boolean",
+        "Default": true,
+        "Effect": "Enable building in Mission Volumes on Genesis Part 1 "
+    },
+    "bGenesisUseStructuresPreventionVolumes": {
+        "Value Type": "boolean",
+        "Default": true,
+        "Effect": "Disable building in mission areas on Genesis Part 1 if set to true "
+    },
+    "bAllowFlyerSpeedLeveling": {
+        "Value Type": "boolean",
+        "Default": false,
+        "Effect": "Specifies whether flyer creatures can have their Movement Speed leveled up Introduced in patch 321.1"
+    },
+    "CraftingSkillBonusMultiplier": {
+        "Value Type": "float",
+        "Default": 1.0,
+        "Effect": "A multiplier to modify the bonus received from upgrading the Crafting Skill. Introduced in patch 259.32 "
+    }
+}
