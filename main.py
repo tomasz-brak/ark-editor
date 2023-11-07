@@ -1,3 +1,4 @@
+from types import NoneType
 from PyQt6 import QtWidgets
 import sys
 from ui.mainUI import Ui_MainWindow
@@ -5,19 +6,38 @@ from ui.booleditUI import Ui_Form as Ui_BoolEdit
 from ui.numberEditUI import Ui_Form as Ui_NumberEdit
 from ui.stringEditUI import Ui_Form as Ui_StringEdit
 import json
+from collections import namedtuple
+
+
+def translate_written_type(text: str) -> type:
+    text = text.lower()
+    if text == "boolean":
+        return bool
+    if text == "float":
+        return float
+    if text == "integer":
+        return int
+    if text == "string":
+        return str
 
 
 class Editor:
-    def __init__(self, title: str, value: any, desc: str, type: type) -> None:
+    def __init__(
+        self, title: str, value: any, desc: str, type_of_variable: str
+    ) -> None:
         self.title = title
         self.value = value
+        if self.value == NoneType:
+            self.value = None
         self.types = {
             bool: self.addBoolEdit,
             (float, int): self.addFloatEdit,
             str: self.addStrEdit,
         }
-        self.valueType = type(value)
+        self.valueType: type = translate_written_type(type_of_variable)
+        self.desc = desc
         self.widget = self.addWidgetInferType()
+        self.widget.setToolTip(self.desc)
 
     def addBoolEdit(self) -> QtWidgets.QWidget:
         self.Form = QtWidgets.QWidget()
@@ -28,6 +48,7 @@ class Editor:
         return self.Form
 
     def addFloatEdit(self) -> QtWidgets.QWidget:
+        print("processing: ", self.title)
         self.Form = QtWidgets.QWidget()
         self.ui = Ui_NumberEdit()
         self.ui.setupUi(self.Form)
@@ -44,10 +65,21 @@ class Editor:
         return self.Form
 
     def addWidgetInferType(self) -> QtWidgets.QWidget:
-        for type, func in self.types.items():
-            if isinstance(self.value, type):
-                return func()
-        raise TypeError("Invalid type")
+        types = {
+            str: (self.addStrEdit, ""),
+            int: (self.addFloatEdit, 0),
+            bool: (self.addBoolEdit, False),
+            float: (self.addFloatEdit, 0.0),
+        }
+        if function := types.get(self.valueType, None)[0]:
+            default: any = types.get(self.valueType, None)[1]
+            if not self.value or self.value == NoneType:
+                self.value = default
+            return function()
+        else:
+            raise TypeError(
+                f"Expected an allowed type (str, int, bool, float); got: {self.valueType}"
+            )
 
 
 def tryFloatIntBool(a: str) -> [str or int or float or bool]:
@@ -125,9 +157,34 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
 
-    Editors = []
+    Editors: list[Editor] = []
 
     if not validateFiles():
-        raise ValueError("Invalid files! Check the formatting of json files")
+        raise ValueError("Invalid files! Check the formatting of json config files")
+
+    game_config = open("game.template.json", "r", encoding="utf-8")
+    game_user_config = open("gameUser.template.json", "r", encoding="utf-8")
+
+    game_config = json.load(game_config)
+    game_user_config = json.load(game_user_config)
+
+    for propertyName, details in game_config.items():
+        print(details.get("Value Type"))
+        print(details.get("Default"))
+        print(details.get("Effect"))
+
+        Editors.append(
+            Editor(
+                propertyName,
+                (details.get("Default")),
+                details.get("Effect"),
+                details.get("Value Type"),
+            )
+        )
+
+    for editor in Editors:
+        ui.formLayoutMain.addWidget(editor.widget)
+
+    # Check github issues for To Do's
 
     sys.exit(app.exec())
