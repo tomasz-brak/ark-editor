@@ -96,7 +96,7 @@ class Editor:
     def get_value_any(self) -> any:
         if self.value_type == bool:
             return self.form.findChild(QtWidgets.QCheckBox).isChecked()
-        if self.value_type == int or self.value_type == float:
+        if self.value_type in (int, float):
             return self.form.findChild(QtWidgets.QDoubleSpinBox).value()
         if self.value_type == str:
             return self.form.findChild(QtWidgets.QLineEdit).text()
