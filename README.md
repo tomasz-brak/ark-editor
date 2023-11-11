@@ -4,7 +4,9 @@ An native(QT6) edior for ark ini server configuration files. Allows you to edit 
 
 ## Downloads
 
-TbA
+1. Clone the repository
+2. Install `pyqt6`
+3. Run `python main.py`
 
 ## Issues
 
