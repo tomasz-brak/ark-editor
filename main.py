@@ -62,6 +62,9 @@ class Editor:
         print("processing: ", self.title)
         user_interface = Ui_NumberEdit()
         user_interface.setupUi(self.form)
+        if self.value_type == int:
+            user_interface.doubleSpinBox.setSingleStep(1)
+            user_interface.doubleSpinBox.setDecimals(0)
         user_interface.doubleSpinBox.setValue(self.value)
         user_interface.label.setText(self.title)
         return self.form
@@ -90,6 +93,18 @@ class Editor:
                 got: {self.value_type}"""
         )
 
+    def get_value_any(self) -> any:
+        if self.value_type == bool:
+            return self.form.findChild(QtWidgets.QCheckBox).isChecked()
+        if self.value_type in (int, float):
+            return self.form.findChild(QtWidgets.QDoubleSpinBox).value()
+        if self.value_type == str:
+            return self.form.findChild(QtWidgets.QLineEdit).text()
+        raise TypeError(
+            f"""Expected an allowed type (str, int, bool, float);
+                got: {self.value_type}"""
+        )
+
 
 def try_float_int_bool(unknown_string: str) -> [str or int or float or bool]:
     try:
@@ -104,6 +119,44 @@ def try_float_int_bool(unknown_string: str) -> [str or int or float or bool]:
     if unknown_string.isdigit():
         return int(unknown_string)
     return float(unknown_string)
+
+
+def ask_save_file(name, main_window: QtWidgets.QMainWindow) -> str:
+    filename, _ = QtWidgets.QFileDialog.getSaveFileName(
+        main_window,
+        f"Save {name}.ini",
+        "",
+        "All Files(*);;Ini files(*.ini)",
+    )
+    return filename
+
+
+def save_changes(
+    main_window: QtWidgets.QMainWindow, active_editors: list[Editor]
+) -> bool:
+    filename = ask_save_file("GameUserSettings", main_window)
+    if not filename:
+        return False
+    if not filename.endswith(".ini"):
+        filename += ".ini"
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write("[ServerSettings]\n")
+        for editor in active_editors:
+            if editor.type_of_file == "GameUserSettings.ini":
+                file.write(f"{editor.title}={editor.get_value_any()}\n")
+
+    filename = ask_save_file("Game.ini", main_window)
+    if not filename:
+        return False
+    if not filename.endswith(".ini"):
+        filename += ".ini"
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write("[/script/shootergame.shootergamemode]\n")
+        for editor in active_editors:
+            if editor.type_of_file == "Game.ini":
+                file.write(f"{editor.title}={editor.get_value_any()}\n")
+
+    return False
 
 
 def main():
@@ -122,9 +175,9 @@ def main():
              formatting of json config files"""
         )
     with open("game.template.json", "r", encoding="utf-8") as game_config:
-        game_config = json.load(game_config)
+        game_config: dict = json.load(game_config)
     with open("gameUser.template.json", "r", encoding="utf-8") as game_user_config:
-        game_user_config = json.load(game_user_config)
+        game_user_config: dict = json.load(game_user_config)
 
     label_game_ini = QtWidgets.QLabel(parent=main_window)
     label_game_user_ini = QtWidgets.QLabel(parent=main_window)
@@ -146,16 +199,33 @@ def main():
                 (details.get("Default")),
                 details.get("Effect"),
                 details.get("Value Type"),
-                "game.ini",
+                "Game.ini",
             )
         )
 
     for property_name, details in game_user_config.items():
-        pass
+        active_editors.append(
+            Editor(
+                property_name,
+                (details.get("Default")),
+                details.get("Effect"),
+                details.get("Value Type"),
+                "GameUserSettings.ini",
+            )
+        )
 
     user_interface.formLayoutMain.addWidget(label_game_ini)
     for editor in active_editors:
-        user_interface.formLayoutMain.addWidget(editor.widget)
+        if editor.type_of_file == "Game.ini":
+            user_interface.formLayoutMain.addWidget(editor.widget)
+    user_interface.formLayoutMain.addWidget(label_game_user_ini)
+    for editor in active_editors:
+        if editor.type_of_file == "GameUserSettings.ini":
+            user_interface.formLayoutMain.addWidget(editor.widget)
+
+    user_interface.GeneratepushButton.clicked.connect(
+        lambda: save_changes(main_window, active_editors)
+    )
 
     # Check github issues for To Do's
     sys.exit(app.exec())
